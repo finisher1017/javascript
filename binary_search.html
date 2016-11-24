@@ -1,0 +1,35 @@
+<script>
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+var min = numbers[0];
+var max = numbers[numbers.length - 1];
+var n = Math.random();
+var new_n = (n * max) + 1;
+var final_n = Math.floor(new_n);
+
+for (var i = 0; i < 10; i++) {
+  if (max < min) {
+  	break;
+
+  }
+  var guess = Math.floor((min + max) / 2);
+  if (guess === final_n) {
+  	alert("Correct! The number is " + final_n);
+  	break;
+  }
+  else {
+  	if (guess > final_n) {
+  	  max = numbers[guess - 2];	
+      alert("The number is " + final_n + ". " + guess + " is too high. Guess again. New range is " + min + " through " + max);
+      }
+    else {
+      min = numbers[guess];
+      alert("The number is " + final_n + ". " + guess + " is too low. Guess again. New range is " + min + " through " + max);
+  	  continue;
+  	  }
+    }
+    
+  
+}
+
+</script>
