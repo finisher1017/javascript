@@ -1,0 +1,98 @@
+<DOCTYPE HTML>
+<html>
+<body>
+
+	<select id="f1r1Score">
+	<option value="0">Pacquiao</option>
+	<option value="10">10</option>
+	<option value="9">9</option>
+	<option value="8">8</option>
+	</select>
+	<br>
+	<br>
+	<select id="f2r1Score">
+	<option value="0">Marquez</option>
+	<option value="10">10</option>
+	<option value="9">9</option>
+	<option value="8">8</option>
+	</select>
+	<br>
+	<br>
+	<button id="round1Submit" onClick="submitRound1();">submit</button>
+	<br>
+	<br>
+	<select id="f1r2Score">
+	<option value="0">Pacquiao</option>
+	<option value="10">10</option>
+	<option value="9">9</option>
+	<option value="8">8</option>
+	</select>
+	<br>
+	<br>
+	<select id="f2r2Score">
+	<option value="0">Marquez</option>
+	<option value="10">10</option>
+	<option value="9">9</option>
+	<option value="8">8</option>
+	</select>
+	<br>
+	<br>
+	<button id="round2Submit" onClick="submitRound2();">submit</button>
+	<br>
+	<br>
+	<table>
+	  <tr>
+	  	<th scope="col"></th>
+	  	<th scope="col">round1</th>
+	  	<th scope="col">round2</th>
+	  	<th scope="col">Total</th>
+	  </tr>
+	  <tr>
+	  	<th scope="row">Pacqiao</th>
+	  	<td id="f1r1">0</td>
+	  	<td id="f1r2">0</td>
+	  	<td id="f1Result">0</td>
+	  </tr>
+	  <tr>
+	    <th scope="row">Marquez</th>
+	    <td id="f2r1">0</td>
+	    <td id="f2r2">0</td>
+	    <td id=f2Result>0</td>
+	  </tr>
+	</table>
+
+
+
+
+
+<script>
+
+	function submitRound1() {
+      var f1r1Value = document.getElementById("f1r1Score").value;
+      var f1r2Value = document.getElementById("f1r2Score").value;
+      var f2r1Value = document.getElementById("f2r1Score").value;
+      var f2r2Value = document.getElementById("f2r2Score").value;
+      var f1Total = parseInt(f1r1Value) + parseInt(f1r2Value);
+      var f2Total = parseInt(f2r1Value) + parseInt(f2r2Value);
+      document.getElementById("f1r1").innerHTML = f1r1Value;
+      document.getElementById("f2r1").innerHTML = f2r1Value;
+      document.getElementById("f1Result").innerHTML = f1Total;
+      document.getElementById("f2Result").innerHTML = f2Total;  
+	}
+
+	function submitRound2() {
+      var f1r1Value = document.getElementById("f1r1Score").value;
+      var f1r2Value = document.getElementById("f1r2Score").value;
+      var f2r1Value = document.getElementById("f2r1Score").value;
+      var f2r2Value = document.getElementById("f2r2Score").value;
+      var f1Total = parseInt(f1r1Value) + parseInt(f1r2Value);
+      var f2Total = parseInt(f2r1Value) + parseInt(f2r2Value);
+      document.getElementById("f1r2").innerHTML = f1r2Value;
+      document.getElementById("f2r2").innerHTML = f2r2Value;
+      document.getElementById("f1Result").innerHTML = f1Total;
+      document.getElementById("f2Result").innerHTML = f2Total;  
+	}
+
+</script>
+</body>
+</html>

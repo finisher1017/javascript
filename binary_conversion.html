@@ -1,0 +1,40 @@
+<DOCTYPE! HTML>
+<html>
+<body>
+	Number: <input id="binary">
+	<button id="convert" onClick="convertToInt();">convert</button><br>
+	Binary Equivolent: <input id="convertedInt">
+
+
+<script>
+	function convertToInt() {
+	  var numToConvert = document.getElementById("binary").value;
+	  beginScale = 1;
+	  counter = 0;
+	  empty = [];
+	  while (beginScale <= numToConvert){
+	  	beginScale = beginScale * 2;
+	  	counter++;
+	  }
+	  
+	  beginScale = Math.round(beginScale / 2);
+
+	  while (counter > 0){
+	  	if ((numToConvert - beginScale) < 0){
+	  		empty.push("0");
+	  		beginScale = Math.round(beginScale / 2);
+	  		counter--;
+	  	} else {
+	  		empty.push("1");
+	  		numToConvert = numToConvert - beginScale;
+	  		beginScale = Math.round(beginScale / 2);
+	  		counter--;
+	  	}
+	  }
+	  document.getElementById("convertedInt").value = empty.join("");
+	  
+	}
+
+</script>
+</body>
+</html>
